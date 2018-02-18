@@ -18,6 +18,10 @@
             <%= f.password_field :password, autocomplete: "off",  placeholder: 'Your password', class: "input-lg center-block" %>
           </div>
 
+          <div class="form-group center-block">
+            <%= f.password_field :password_confirmation, autocomplete: "off",  placeholder: 'Repeat password', class: "input-lg center-block" %>
+          </div>
+
           <div class="actions">
             <%= f.submit "Sign Up", class: "btn btn-block btn-lg btn-primary" %>
           </div>
