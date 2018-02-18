@@ -5,13 +5,14 @@ UserBaseOps::Application.routes.draw do
   #   :registrations => "user/registrations",
   #   :sessions      => "user/sessions"
   # }
-  devise_for :users do
-    post  "sign_up" => "registrations#new", :as => :signup
-    get   "sign_in" => "sessions#new",      :as => :signin
-  end
 
+  devise_for :users, :controllers => {
+      :registrations => "user/registrations",
+      :sessions      => "user/sessions"
+  }
 
-  get '/after_registration', to: 'home#after_registration', as: 'after_registration'
+  get '/welcome', to: "home#welcome"
+
   root to: "home#index"
 
 end
