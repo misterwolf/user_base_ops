@@ -16,7 +16,7 @@ Setup
  git clone https://github.com/misterwolf/user_base_ops.git
 
 - Install required gems:
- gem install bundler && gem install foreman && bundle install
+ gem install bundler && bundle install
 
 Start development server:
  rails s -p 3000
