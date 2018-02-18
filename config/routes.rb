@@ -5,13 +5,36 @@ UserBaseOps::Application.routes.draw do
   #   :registrations => "user/registrations",
   #   :sessions      => "user/sessions"
   # }
-  devise_for :users do
-    post  "sign_up" => "registrations#new", :as => :signup
-    get   "sign_in" => "sessions#new",      :as => :signin
+  devise_for :users, :path_names => {
+        :sign_in  => "signin",
+        :sign_out => "signout"
+      },
+      :controllers => {
+        :sessions      => "user/sessions"
+      }, skip: :registration
+
+  #  as default, Devise defines a different url for registration#create (POST) from registration#create (GET)
+  #  this cause problem if user reload after the signup went wrong.
+  #  this is a little hack to solve it.
+  #  included skip: :registration above.
+
+  devise_scope :user do
+    resource :registration, :as => :user_registration, :only => [ :new, :edit, :update, :destroy ],
+      :path => "/users",
+      :path_names=> {
+        :new  => "signup",
+        :edit => "edit"
+      },
+      :controller=>"user/registrations"  do
+        get  :cancel
+        post :signup, action: :create, as: ''
+        post :edit,   action: :create, as: 'edit'
+        put  :signup, action: :update, as: 'update' # => update password.
+      end
   end
 
+  get '/welcome', to: "home#welcome"
 
-  get '/after_registration', to: 'home#after_registration', as: 'after_registration'
   root to: "home#index"
 
 end
