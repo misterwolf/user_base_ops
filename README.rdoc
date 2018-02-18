@@ -12,7 +12,7 @@ Ruby 2.3.4
 
 Setup
 
-- Clone push-chessgame repo:
+- Clone user base ops repo:
  git clone https://github.com/misterwolf/user_base_ops.git
 
 - Install required gems:
