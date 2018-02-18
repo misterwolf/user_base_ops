@@ -1,6 +1,7 @@
 UserBaseOps::Application.routes.draw do
 
-  #devise_for :users, :controllers => { // I wanted check the overriding of controllers
+  # in this way we are using a custom controller for Devise registrions and sessions.
+  #devise_for :users, :controllers => {
   #   :registrations => "user/registrations",
   #   :sessions      => "user/sessions"
   # }
