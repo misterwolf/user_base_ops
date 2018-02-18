@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   validates :email, presence: true
   validates :email, uniqueness: true
-  validates :password, length: { minimum: 8 }, unless: "password.nil?"
+  validates :password, length: { minimum: 6 }, unless: "password.nil?"
   validates :password, presence: true, if: "id.nil?"
   validates_confirmation_of :password
 

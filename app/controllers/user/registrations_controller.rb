@@ -1,4 +1,5 @@
 class User::RegistrationsController < Devise::RegistrationsController
+  # custom registration controller for Devise
 
   protected
 
