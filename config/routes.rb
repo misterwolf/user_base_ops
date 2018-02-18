@@ -20,13 +20,16 @@ UserBaseOps::Application.routes.draw do
 
   devise_scope :user do
     resource :registration, :as => :user_registration, :only => [ :new, :edit, :update, :destroy ],
-      :path=> "/users",
+      :path => "/users",
       :path_names=> {
-        :new =>"signup"
+        :new  => "signup",
+        :edit => "edit"
       },
-      :controller=>"devise/registrations"  do
-        get :cancel
+      :controller=>"user/registrations"  do
+        get  :cancel
         post :signup, action: :create, as: ''
+        post :edit,   action: :create, as: 'edit'
+        put  :signup, action: :update, as: 'update' # => update password.
       end
   end
 
