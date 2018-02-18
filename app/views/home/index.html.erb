@@ -1,7 +1,24 @@
-<h1>
-  Hello To All!
-</h1>
+<div class="jumbotron">
+  <div class="row text-center">
+    <% if user_signed_in? %>
+      <h1>Welcome back, trusted user!</h1>
+      <p class="lead">
+        You have signed in!  If this were a real app some sweet conent
+        would go here.  But it's just a test.  You might want to sign out now.
+      </p>
+      <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => 'btn btn-large btn-danger' %>
+    <% else %>
+      <h1>Welcome, guest user!</h1>
+      <p class="lead">
+        You must sign in or sign up before you can access this amazing application!
+      </p>
+        <div class="col-xs-6">
 
-<p>
-  please sign in, login, and reset password too!
-</p>
+          <%= link_to "Sign In", new_user_session_path, :class => "btn btn-success" %>
+        </div>
+        <div class="col-xs-6">
+          <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-success" %>
+        </div>
+    <% end %>
+  </div>
+</div>

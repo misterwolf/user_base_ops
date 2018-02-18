@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.1.14.2' # rails 4.0 causes problems
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -32,7 +32,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'devise'
+gem 'devise', '4.4.1'
 
 gem 'mysql2', '0.3.21'
 

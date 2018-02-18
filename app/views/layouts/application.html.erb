@@ -12,10 +12,22 @@
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
 <% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
+  <p class="alert alert-danger"> <%= alert %> </p>
 <% end %>
 
-<%= yield %>
+<div class="container">
+  <div class="masthead">
+    <div class="alert alert-success" role="alert">
+
+      <%= render 'layouts/user_header' %>
+
+      <h3 class="muted"><%= link_to "UserBaseOps", root_path %></h3>
+      <h5 class="muted">A simple application for SignUp, Login and ResetPasswrod operations!</h5>
+    </div>
+  </div>
+  <hr />
+  <%= yield %>
+</div>
 
 </body>
 </html>
