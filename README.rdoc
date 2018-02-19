@@ -1,7 +1,6 @@
 User Base Ops
 
-a simple project for user signup, signin and password change using Devise gem.
-
+a simple project in Rails (version 4.1.14.2) for user signup, signin and password change using Devise gem (version 4.4.1).
 
 RVM
  install rvm (ref: https://rvm.io/rvm/install)
@@ -9,10 +8,6 @@ RVM
 
 Ruby 2.3.4
  rvm install ruby-2.3.4
-
-Rails 4.1.14.2
-
-Devise 4.4.1
 
 Setup
 
